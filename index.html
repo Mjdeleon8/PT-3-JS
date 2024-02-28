@@ -29,7 +29,7 @@
       let total = 0;
       let userArray = [];
 
-      for (i = 0; i < 25; i++) {
+      for (i = 0; i <= 25; i++) {
         let n = "";
         if (i == 1) {
           n = "nd";
@@ -41,7 +41,7 @@
           n = "th";
         }
 
-        let userInput = i; //parseInt(prompt(`Enter ${i + 1}${n} Number`));
+        let userInput = parseInt(prompt(`Enter ${i + 1}${n} Number`));
 
         let pictures = ["", "", "", "", ""];
         let index = Math.floor(Math.random() * pictures.length);
