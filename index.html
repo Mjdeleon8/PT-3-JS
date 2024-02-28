@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performance Task 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="wrapper">
+        <div id="content-even">
+          <div class="title">
+            <h2>Even</h2>
+          </div>
+        </div>
+        <div id="content-odd">
+          <div class="title">
+            <h2>Odd</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let contentEven = document.getElementById("content-even");
+      let contentOdd = document.getElementById("content-odd");
+
+      let total = 0;
+      let userArray = [];
+
+      for (i = 0; i < 25; i++) {
+        let n = "";
+        if (i == 1) {
+          n = "nd";
+        } else if (i == 2) {
+          n = "rd";
+        } else if (i == 0) {
+          n = "st";
+        } else {
+          n = "th";
+        }
+
+        let userInput = i; //parseInt(prompt(`Enter ${i + 1}${n} Number`));
+
+        let pictures = ["", "", "", "", ""];
+        let index = Math.floor(Math.random() * pictures.length);
+
+        if (userInput % 2 === 0) {
+          let new_p = document.createElement("p");
+          new_p.innerHTML = userInput;
+          total += userInput;
+          contentEven.appendChild(new_p);
+          userArray.push(userInput);
+        } else {
+          let new_p = document.createElement("p");
+          new_p.innerHTML = userInput;
+          total += userInput;
+          contentOdd.appendChild(new_p);
+        }
+      }
+
+      container.innerHTML += "<p class='text'>" + "Sum is: " + total + "</p>";
+      container.innerHTML += "<p class='text'>" + userArray + "</p>";
+    </script>
+  </body>
+</html>
